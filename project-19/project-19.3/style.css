@@ -1,0 +1,140 @@
+/* Reset & Common Code */
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+  background: #dddeee;
+}
+.diverter{
+  width: 90%;
+  background: #dddeee;
+  height: 0.2rem;
+  margin: auto;
+}
+.text-center{
+  text-align: center;
+}
+.p-1{
+  padding: 1rem;
+}
+.color-white{
+  color: #fff;
+}
+.lead{
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+.border-radius{
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.container{
+  width: 60rem;
+  margin: 3rem auto;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem #af6659, -0.1rem -0.1rem 1rem #af6659;
+}
+.w-100{
+  width: 100%;
+  padding: 0.4rem 0.8rem;
+  outline: none;
+  margin: 0.3rem auto;
+}
+select:focus{
+  border-color: tomato;
+}
+
+/* ############### End Reset & Common Code ############### */
+
+.main-title{
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+}
+.select-Area{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.select-Area select{
+  width: 100%;
+  outline: none;
+  padding: 0.8rem 0;
+  margin-top: 0.5rem;
+}
+.select-wrap{
+  overflow: hidden;
+  margin-top: 4rem;
+}
+.select-wrap select{
+  padding: 0.8rem 0;
+}
+.left{
+  width: 40%;
+  margin: 2rem auto;
+  float: left;
+  padding-left: 2.5rem;
+}
+.right{
+  width: 40%;
+  margin: 2rem auto;
+  padding-right: 2.5rem;
+  float: right;
+}
+.middle{
+  width: 20%;
+  margin: 2.5rem auto;
+  float: left;
+}
+.middle span{
+  font-size: 6rem;
+  margin: 1rem;
+  /* user-select: none; */
+}
+#left-input,
+#right-input{
+  font-size: 2rem;
+  background: transparent;
+  outline: none;
+  border: 0.1rem solid #757575;
+  text-transform: uppercase;
+}
+#left-input:focus,
+#right-input:focus{
+  border-color: tomato;
+}
+.formula-area{
+  padding: 1rem;
+  margin: 2rem 2.5rem;
+  background: #dddeee;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.formula-area h3{
+  font-size: 2.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #333;
+  /* user-select: none; */
+}
+.formula-area p{
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  color: #666;
+  line-height: 2rem;
+}

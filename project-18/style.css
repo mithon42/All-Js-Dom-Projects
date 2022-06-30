@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+hr{
+  border-color:rgba(255, 255, 255, 0.534);
+}
+.container{
+  width: 550px;
+  margin: 20px auto;
+  background-color: cadetblue;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px #ffa2a2, -2px -2px #ffa2a2;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+.top-section{
+  margin: 10px 0;
+}
+.top-section h1{
+  margin-bottom: 5px;
+}
+.top-section p{
+  font-size: 15px;
+}
+
+.middle-section{
+  margin: 20px 0;
+}
+.middle-section h2{
+  font-size: 60px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.bottom-section{
+  margin: 10px 0;
+}
+.bottom-section input{
+  width: 160px;
+  outline: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 4px 6px;
+  font-size: 18px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  background-color: transparent;
+}
+.bottom-section button{
+  padding: 8px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4d4336;
+  color: #fff;
+}
+.bottom-section #increment-btn{
+  margin-right: 10px;
+}
+.bottom-section #decrement-btn{
+  margin-left: 10px;
+}
+.bottom-section button:hover{
+  background-color: #223f6b;
+}

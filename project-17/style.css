@@ -1,0 +1,87 @@
+
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #5b917f;
+}
+.container{
+  width: 500px;
+  margin: 10px auto;
+  background-color: rgb(187, 144, 81);
+  padding: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 0 2px 1px #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+  width: 100%;
+  overflow: hidden;
+}
+.header > h2{
+  color: #fff;
+  width: 50%;
+  float: left;
+}
+.header > button{
+  color: #fff;
+  background: #000;
+  padding: 3px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  float: right;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.header > button:hover{
+  opacity: 0.7;
+  color: tomato;
+}
+.input-fill{
+  width: 100%;
+  margin: 15px 0;
+}
+.input-fill label{
+  display: block;
+  margin: 5px 0;
+  color: brown;
+  font-size: 14px
+}
+.input-fill input{
+  width: 100%;
+  padding: 6px;
+  font-size: 17px;
+  border: 0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.input-fill input:hover,
+.input-fill input:focus{
+  outline: 0;
+}
+
+.result-area{
+  font-size: 17px;
+  color: #fff;
+}
+.result-area strong {
+  color: #000;
+}
+.result-area .result {
+  margin: 5px 0;
+}

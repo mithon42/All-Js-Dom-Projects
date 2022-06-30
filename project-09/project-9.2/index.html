@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator || Md. Mithon Islam</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Display Section -->
+        <section class="section">
+            <div class="section-header">
+                <h3 class="section-tittle">Display Color</h3>
+                <button class="section-header-button" id="generate-random-color-btn">Random Color</button>
+            </div>
+            <div class="divider"></div>
+            <div class="color-display" id="color-display"></div>
+        </section>
+
+        <!-- Change & Copy Color -->
+        <section class="section">
+            <section class="section-header">
+                <h3 class="section-tittle">Change & Copy Color</h3>
+                <button class="section-header-action">Copy to Clipboard</button>
+            </section>
+            <div class="divider"></div>
+            <div class="select-copy-mode">
+                <p class="lead">Select Copy Mode</p>
+                <div class="mode-radio-mode">
+                    <div class="mode-input-group">
+                        <input type="radio" name="copy-mode" id="copy-mode-hex" checked />
+                        <label for="color-mode-hex" class="leads">HEX</label>
+                    </div>
+                    <div class="mode-input-group">
+                        <input type="radio" name="copy-mode" id="copy-mode-rgb"/>
+                        <label for="color-mode-hex" class="leads">RGB</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selected-color-code">
+                <div class="hex-input-group">
+                    <label for="input-hex" class="lead">HEX</label>
+                    <input type="text" id="color-input-hex" class="text-input hex-input" placeholder="dddeee">
+                    <div class="hex-icon">#</div>
+                </div>
+                <div class="rgb-input-group">
+                    <label for="input-rgb" class="lead">RGB</label>
+                    <input type="text" placeholder="rgb(221, 222, 238)" id="color-input-rgb" class="text-input" disabled>
+                </div>
+            </div>
+            <div class="color-sliders">
+                <p class="lead">Adjust RGB Colors</p>
+                <div class="color-rgb-group">
+                    <div class="color-rgb-groups">
+                        <div class="slider-label-group">
+                            <p>Red</p>
+                            <p id="color-slider-label-red">221</p>
+                        </div>
+                        <input type="range" min="0" max="255" value="221" class="color-slider" id="color-slider-input-red">
+                    </div>
+                    <div class="color-rgb-groups">
+                        <div class="slider-label-group">
+                            <p>Green</p>
+                            <p id="color-slider-label-green">222</p>
+                        </div>
+                        <input type="range" min="0" max="255" value="222" class="color-slider" id="color-slider-input-green">
+                    </div>
+                    <div class="color-rgb-groups">
+                        <div class="slider-label-group">
+                            <p>Blue</p>
+                            <p id="color-slider-label-blue">238</p>
+                        </div>
+                        <input type="range" min="0" max="255" value="238" class="color-slider" id="color-slider-input-blue">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <!-- js file -->
+    <script src="./main.js"></script>
+</body>
+</html>

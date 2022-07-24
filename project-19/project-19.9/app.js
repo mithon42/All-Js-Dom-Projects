@@ -204,42 +204,45 @@ const converter = {
     units: {
       tonne: 'Tonne',
       kilogram: 'Kilogram',
-      gram: 'Gram',
-      milligram: 'Milligram',
-      usTon: 'Us Ton',
-      stone: 'Stone'
+      gram: 'Gram'
     },
     variants: {
-      'tonne:kilogram': {},
-      'tonne:gram': {},
-      'tonne:milligram': {},
-      'tonne:usTon': {},
-      'tonne:stone': {},
-      'kilogram:tonne': {},
-      'kilogram:gram': {},
-      'kilogram:milligram': {},
-      'kilogram:usTon': {},
-      'kilogram:stone': {},
-      'gram:tonne': {},
-      'gram:kilogram': {},
-      'gram:milligram': {},
-      'gram:usTon': {},
-      'gram:stone': {},
-      'milligram:tonne': {},
-      'milligram:kilogram': {},
-      'milligram:gram': {},
-      'milligram:usTon': {},
-      'milligram:stone': {},
-      'usTon:tonne': {},
-      'usTon:kilogram': {},
-      'usTon:gram': {},
-      'usTon:milligram': {},
-      'usTon:stone': {},
-      'stone:tonne': {},
-      'stone:kilogram': {},
-      'stone:gram': {},
-      'stone:milligram': {},
-      'stone:usTon': {},
+      'tonne:kilogram': {
+        formula: 'multiply the mass value by 1000',
+        calculation(n){
+          return n * 1000;
+        },
+      },
+      'tonne:gram': {
+        formula: 'multiply the mass value by 1e+6',
+        calculation(n){
+          return n * new Number('1e+6');
+        },
+      },
+      'kilogram:tonne': {
+        formula: 'divide the mass value by 1000',
+        calculation(n){
+          return n / 1000;
+        },
+      },
+      'kilogram:gram': {
+        formula: 'multiply the mass value by 1000',
+        calculation(n){
+          return n * 1000;
+        },
+      },
+      'gram:tonne': {
+        formula: 'divide the mass value by 1e+6',
+        calculation(n){
+          return n / new Number('1e+6');
+        },
+      },
+      'gram:kilogram': {
+        formula: 'divide the mass value by 1000',
+        calculation(n){
+          return n / 1000;
+        },
+      }
     }
   },
   length: {
@@ -250,104 +253,353 @@ const converter = {
       centimeter: 'Centimeter',
       millimeter: 'Millimeter',
       micrometers: 'Micrometers',
-      nanometer: 'Nanometer',
       mile: 'Mile',
-      yard: 'Yard',
       foot: 'Foot',
       inch: 'Inch'
     },
     variants: {
-      'kilometer:meter': {},
-      'kilometer:centimeter': {},
-      'kilometer:millimeter': {},
-      'kilometer:micrometers': {},
-      'kilometer:nanometer': {},
-      'kilometer:mile': {},
-      'kilometer:year': {},
-      'kilometer:foot': {},
-      'kilometer:inch': {},
-      'meter:kilometer': {},
-      'meter:centimeter': {},
-      'meter:millimeter': {},
-      'meter:micrometers': {},
-      'meter:nanometer': {},
-      'meter:mile': {},
-      'meter:yard': {},
-      'meter:foot': {},
-      'meter:inch': {},
-      'centimeter:kilometer': {},
-      'centimeter:meter': {},
-      'centimeter:millimeter': {},
-      'centimeter:micrometers': {},
-      'centimeter:nanometer': {},
-      'centimeter:mile': {},
-      'centimeter:yard': {},
-      'centimeter:foot': {},
-      'centimeter:inch': {},
-      'millimeter:kilometer': {},
-      'millimeter:meter': {},
-      'millimeter:centimeter': {},
-      'millimeter:micrometers': {},
-      'millimeter:nanometer': {},
-      'millimeter:mile': {},
-      'millimeter:yard': {},
-      'millimeter:foot': {},
-      'millimeter:inch': {},
-      'micrometer:kilometer': {},
-      'micrometer:meter': {},
-      'micrometer:centimeter': {},
-      'micrometer:millimeter': {},
-      'micrometer:nanometer': {},
-      'micrometer:mile': {},
-      'micrometer:yard': {},
-      'micrometer:foot': {},
-      'micrometer:inch': {},
-      'nanometer:kilometer': {},
-      'nanometer:meter': {},
-      'nanometer:centimeter': {},
-      'nanometer:millimeter': {},
-      'nanometer:micrometer': {},
-      'nanometer:mile': {},
-      'nanometer:yard': {},
-      'nanometer:foot': {},
-      'nanometer:inch': {},
-      'mile:kilometer': {},
-      'mile:meter': {},
-      'mile:centimeter': {},
-      'mile:millimeter': {},
-      'mile:micrometer': {},
-      'mile:nanometer': {},
-      'mile:mile': {},
-      'mile:yard': {},
-      'mile:foot': {},
-      'mile:inch': {},
-      'yard:kilometer': {},
-      'yard:meter': {},
-      'yard:centimeter': {},
-      'yard:millimeter': {},
-      'yard:micrometer': {},
-      'yard:nanometer': {},
-      'yard:mile': {},
-      'yard:foot': {},
-      'yard:inch': {},
-      'foot:kilometer': {},
-      'foot:meter': {},
-      'foot:centimeter': {},
-      'foot:millimeter': {},
-      'foot:micrometer': {},
-      'foot:nanometer': {},
-      'foot:mail': {},
-      'foot:yard': {},
-      'foot:inch': {},
-      'inch:kilometer': {},
-      'inch:meter': {},
-      'inch:centimeter': {},
-      'inch:millimeter': {},
-      'inch:micrometer': {},
-      'inch:nanometer': {},
-      'inch:mile': {},
-      'inch:yard': {},
-      'inch:foot': {},
+      'kilometer:meter': {
+        formula: 'multiply the length value by 1000',
+        calculation(n){
+          return n * 1000;
+        },
+      },
+      'kilometer:centimeter': {
+        formula: 'multiply the length value by 100000',
+        calculation(n){
+          return n * 100000;
+        },
+      },
+      'kilometer:millimeter': {
+        formula: 'multiply the length value by 1e+6',
+        calculation(n){
+          return n * new Number('1e+6');
+        },
+      },
+      'kilometer:micrometers': {
+        formula: 'multiply the length value by 1e+9',
+        calculation(n){
+          return n * new Number('1e+9');
+        },
+      },
+      'kilometer:mile': {
+        formula: 'for an approximate result, divide the length value by 1.609',
+        calculation(n){
+          return n / 1.609;
+        },
+      },
+      'kilometer:foot': {
+        formula: 'for an approximate result, multiply the length value by 3281',
+        calculation(n){
+          return n * 3281;
+        },
+      },
+      'kilometer:inch': {
+        formula: 'for an approximate result, multiply the length value by 39370',
+        calculation(n){
+          return n * 39370;
+        },
+      },
+      'meter:kilometer': {
+        formula: 'divide the length value by 1000',
+        calculation(n){
+          return n / 1000;
+        },
+      },
+      'meter:centimeter': {
+        formula: 'multiply the length value by 100',
+        calculation(n){
+          return n * 100;
+        },
+      },
+      'meter:millimeter': {
+        formula: 'divide the length value by 1000',
+        calculation(n){
+          return n / 1000;
+        },
+      },
+      'meter:micrometers': {
+        formula: 'multiply the length value by 1e+6',
+        calculation(n){
+          return n * new Number('1e+6');
+        },
+      },
+      'meter:mile': {
+        formula: 'for an approximate result, divide the length value by 1609',
+        calculation(n){
+          return n / 1609;
+        },
+      },
+      'meter:foot': {
+        formula: 'for an approximate result, multiply the length value by 3.281',
+        calculation(n){
+          return n * 3.281;
+        },
+      },
+      'meter:inch': {
+        formula: 'multiply the length value by 39.37',
+        calculation(n){
+          return n * 39.37;
+        },
+      },
+      'centimeter:kilometer': {
+        formula: 'divide the length value by 100000',
+        calculation(n){
+          return n / 100000;
+        },
+      },
+      'centimeter:meter': {
+        formula: 'divide the length value by 100',
+        calculation(n){
+          return n / 100;
+        },
+      },
+      'centimeter:millimeter': {
+        formula: 'multiply the length value by 10',
+        calculation(n){
+          return n * 10;
+        },
+      },
+      'centimeter:micrometers': {
+        formula: 'multiply the length value by 10000',
+        calculation(n){
+          return n * 10000;
+        },
+      },
+      'centimeter:mile': {
+        formula: 'for an approximate result, divide the length value by 160900',
+        calculation(n){
+          return n / 160900;
+        },
+      },
+      'centimeter:foot': {
+        formula: 'divide the length value by 30.48',
+        calculation(n){
+          return n / 30.48;
+        },
+      },
+      'centimeter:inch': {
+        formula: 'divide the length value by 2.54',
+        calculation(n){
+          return n / 2.54;
+        },
+      },
+      'millimeter:kilometer': {
+        formula: 'divide the length value by 1e+6',
+        calculation(n){
+          return n / new Number('1e+6');
+        },
+      },
+      'millimeter:meter': {
+        formula: 'divide the length value by 1000',
+        calculation(n){
+          return n / 1000;
+        },
+      },
+      'millimeter:centimeter': {
+        formula: 'divide the length value by 10',
+        calculation(n){
+          return n / 10;
+        },
+      },
+      'millimeter:micrometers': {
+        formula: 'multiply the length value by 1000',
+        calculation(n){
+          return n * 1000;
+        },
+      },
+      'millimeter:mile': {
+        formula: 'for an approximate result, divide the length value by 1.609e+6',
+        calculation(n){
+          return n / new Number('1.609e+6');
+        },
+      },
+      'millimeter:foot': {
+        formula: 'divide the length value by 304.8',
+        calculation(n){
+          return n / 304.8;
+        },
+      },
+      'millimeter:inch': {
+        formula: 'divide the length value by 25.4',
+        calculation(n){
+          return n / 25.4;
+        },
+      },
+      'micrometer:kilometer': {
+        formula: 'divide the length value by 1e+9',
+        calculation(n){
+          return n / new Number('1e+9');
+        },
+      },
+      'micrometer:meter': {
+        formula: 'divide the length value by 1e+6',
+        calculation(n){
+          return n / new Number('1e+6');
+        },
+      },
+      'micrometer:centimeter': {
+        formula: 'divide the length value by 10000',
+        calculation(n){
+          return n / 10000;
+        },
+      },
+      'micrometer:millimeter': {
+        formula: 'divide the length value by 1000',
+        calculation(n){
+          return n * 10000;
+        },
+      },
+      'micrometer:mile': {
+        formula: 'for an approximate result, divide the length value by 1.609e+9',
+        calculation(n){
+          return n / new Number('1.609e+9');
+        },
+      },
+      'micrometer:foot': {
+        formula: 'divide the length value by 304800',
+        calculation(n){
+          return n / 304800;
+        },
+      },
+      'micrometer:inch': {
+        formula: 'divide the length value by 25400',
+        calculation(n){
+          return n / 25400;
+        },
+      },
+      'mile:kilometer': {
+        formula: 'for an approximate result, multiply the length value by 1.609',
+        calculation(n){
+          return n * 1.609;
+        },
+      },
+      'mile:meter': {
+        formula: 'for an approximate result, multiply the length value by 1609',
+        calculation(n){
+          return n * 1609;
+        },
+      },
+      'mile:centimeter': {
+        formula: 'for an approximate result, multiply the length value by 160900',
+        calculation(n){
+          return n * 160900;
+        },
+      },
+      'mile:millimeter': {
+        formula: 'for an approximate result, multiply the length value by 1.609e+6',
+        calculation(n){
+          return n * new Number('1.609e+6');
+        },
+      },
+      'mile:micrometer': {
+        formula: 'for an approximate result, multiply the length value by 1.609e+9',
+        calculation(n){
+          return n * new Number('1.609e+9');
+        },
+      },
+      'mile:mile': {
+        formula: 'for an approximate result, divide the length value by 1.609e+9',
+        calculation(n){
+          return n / new Number('1.609e+9');
+        },
+      },
+      'mile:foot': {
+        formula: 'divide the length value by 304800',
+        calculation(n){
+          return n / 304800;
+        },
+      },
+      'mile:inch': {
+        formula: 'divide the length value by 25400',
+        calculation(n){
+          return n / 25400;
+        },
+      },
+      'foot:kilometer': {
+        formula: 'for an approximate result, divide the length value by 3281',
+        calculation(n){
+          return n / 3281;
+        },
+      },
+      'foot:meter': {
+        formula: 'for an approximate result, divide the length value by 3.281',
+        calculation(n){
+          return n / 3.281;
+        },
+      },
+      'foot:centimeter': {
+        formula: 'multiply the length value by 30.48',
+        calculation(n){
+          return n * 30.48;
+        },
+      },
+      'foot:millimeter': {
+        formula: 'multiply the length value by 304.8',
+        calculation(n){
+          return n * 304.8;
+        },
+      },
+      'foot:micrometer': {
+        formula: 'multiply the length value by 304800',
+        calculation(n){
+          return n * 304800;
+        },
+      },
+      'foot:mail': {
+        formula: 'divide the length value by 5280',
+        calculation(n){
+          return n / 5280;
+        },
+      },
+      'foot:inch': {
+        formula: 'multiply the length value by 12',
+        calculation(n){
+          return n * 12;
+        },
+      },
+      'inch:kilometer': {
+        formula: 'for an approximate result, divide the length value by 39370',
+        calculation(n){
+          return n / 39370;
+        },
+      },
+      'inch:meter': {
+        formula: 'divide the length value by 39.37',
+        calculation(n){
+          return n / 39.37;
+        },
+      },
+      'inch:centimeter': {
+        formula: 'multiply the length value by 2.54',
+        calculation(n){
+          return n * 2.54;
+        },
+      },
+      'inch:millimeter': {
+        formula: 'multiply the length value by 25.4',
+        calculation(n){
+          return n * 25.4;
+        },
+      },
+      'inch:micrometer': {
+        formula: 'multiply the length value by 25400',
+        calculation(n){
+          return n * 25400;
+        },
+      },
+      'inch:mile': {
+        formula: 'divide the length value by 63360',
+        calculation(n){
+          return n / 63360;
+        },
+      },
+      'inch:foot': {
+        formula: 'divide the length value by 12',
+        calculation(n){
+          return n / 12;
+        },
+      },
     }
   },
   time: {
@@ -392,9 +644,9 @@ const converter = {
         },
       },
       'minute:hour': {
-        formula: 'multiply the time value by 60',
+        formula: 'divide the time value by 60',
         calculation(n){
-          return n * 60;
+          return n / 60;
         },
       },
       'minute:day': {
@@ -462,52 +714,22 @@ const converter = {
   volume: {
     name: 'Volume',
     units: {
-      usLiquidGallon: 'US Liquid Gallon',
-      usLiquidQuart: 'US Liquid Quart',
-      usTablespoon: 'US Tables Poon',
-      usTeaspoon: 'US Teaspoon',
-      cubicMeter: 'Cubic Meter',
       liter: 'Liter',
       milliliter: 'Milliliter'
     },
     variants: {
-      'usLiquidGallon:usLiquidQuart': {},
-      'usLiquidGallon:usTablespoon': {},
-      'usLiquidGallon:usTeaspoon': {},
-      'usLiquidGallon:cubicMeter': {},
-      'usLiquidGallon:liter': {},
-      'usLiquidGallon:milliliter': {},
-      'usLiquidQuart:usLiquidGallon': {},
-      'usLiquidQuart:usTablespoon': {},
-      'usLiquidQuart:usTeaspoon': {},
-      'usLiquidQuart:cubicMeter': {},
-      'usLiquidQuart:liter': {},
-      'usLiquidQuart:milliliter': {},
-      'usTablespoon:usLiquidGallon': {},
-      'usTablespoon:usLiquidQuart': {},
-      'usTablespoon:usTeaspoon': {},
-      'usTablespoon:cubicMeter': {},
-      'usTablespoon:liter': {},
-      'usTablespoon:milliliter': {},
-      'cubicMeter:usLiquidGallon': {},
-      'cubicMeter:usLiquidQuart': {},
-      'cubicMeter:usTablespoon': {},
-      'cubicMeter:usTeaspoon': {},
-      'cubicMeter:liter': {},
-      'cubicMeter:milliliter': {},
-      'liter:usLiquidGallon': {},
-      'liter:usLiquidQuart': {},
-      'liter:usTablespoon': {},
-      'liter:usTeaspoon': {},
-      'liter:cubicMeter': {},
-      'liter:milliliter': {},
-      'milliliter:usLiquidGallon': {},
-      'milliliter:usLiquidQuart': {},
-      'milliliter:usTablespoon': {},
-      'milliliter:usTeaspoon': {},
-      'milliliter:cubicMeter': {},
-      'milliliter:liter': {},
-
+      'liter:milliliter': {
+        formula: 'multiply the volume value by 1000',
+        calculation(n){
+          return n * 1000;
+        },
+      },
+      'milliliter:liter': {
+        formula: 'divide the volume value by 1000',
+        calculation(n){
+          return n / 1000;
+        },
+      }
     }
   }
 }
